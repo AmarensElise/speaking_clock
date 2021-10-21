@@ -14,10 +14,6 @@
  *= require_self
  */
 
-*{
-  font-family: font-family: 'Source Code Pro', monospace !important;
-}
-
 .navigation_bar {
   text-align: center;
   color: grey;}
