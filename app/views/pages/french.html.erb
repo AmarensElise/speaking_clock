@@ -1,0 +1,20 @@
+
+
+<%= render "navbar" %>
+
+<!-- <div class="clock" style="padding-top: 20%; text-align: center;
+    background-image:url(/assets/russian.png);
+		background-repeat:repeat;
+		background-attachment:fixed;
+		overflow:scroll;
+		width:1500px;
+		height:500px;
+		line-height:2em;"> -->
+    <div class ="container" style="text-align: center; padding-top: 20%;">
+  <audio controls autoplay>
+    <source src="<%= @filepath %>" type="audio/mp3">
+  </audio>
+  <!-- <img src="assets/russian.png" alt=""> -->
+  <!-- <p><%= @filepath %></p> -->
+  <p ><%= @time_phrase %></p>
+</div>
