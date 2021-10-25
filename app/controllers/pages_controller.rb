@@ -57,12 +57,12 @@ class PagesController < ApplicationController
     end
 
     if Time.now.min > 30
-      @time_phrase = @minutes.to_s + " past " + @hour.to_s + " it is."
+      @time_phrase =  Time.now.min.to_s + " past " + Time.now.hour.to_s + " it is."
     else
-      @time_phrase = @minutes.to_s + " past " + @hour.to_s + " it is."
+      @time_phrase =  Time.now.min.to_s + " past " + Time.now.hour.to_s + " it is."
     end
 
-    @filepath = "/assets/yoda/" + @hour_twelve.to_s + "_" + @minutes.to_s + ".mp3"
+    @filepath = "/assets/yoda/" + @hour_twelve.to_s + "_" +  Time.now.min.to_s + ".mp3"
   end
 
   def russian
@@ -115,8 +115,8 @@ class PagesController < ApplicationController
       @hour = @hour_twelve + 1
     end
 
-    @time_phrase = "It's " + @hour.to_s + ":" + @minutes.to_s
-    @filepath = "/assets/russian/" + @hour_twelve.to_s + "_" + @minutes.to_s + ".mp3"
+    @time_phrase = "It's " + Time.now.hour.to_s + ":" +  Time.now.min.to_s
+    @filepath = "/assets/russian/" + @hour_twelve.to_s + "_" +  Time.now.min.to_s + ".mp3"
   end
 
   def french
@@ -169,7 +169,7 @@ class PagesController < ApplicationController
       @hour = @hour_twelve + 1
     end
 
-    @time_phrase = "It's " + @hour.to_s + ":" + @minutes.to_s
-    @filepath = "/assets/french/" + @hour_twelve.to_s + "_" + @minutes.to_s + ".mp3"
+    @time_phrase = "It's " + Time.now.hour.to_s+ ":" + Time.now.min.to_s
+    @filepath = "/assets/french/" + @hour_twelve.to_s + "_" +  Time.now.min.to_s + ".mp3"
   end
 end
