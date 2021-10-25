@@ -6216,3 +6216,135 @@ Processing by PagesController#yoda as HTML
 Completed 200 OK in 35ms (Views: 32.8ms | ActiveRecord: 0.0ms | Allocations: 5184)
 
 
+Started GET "/" for ::1 at 2021-10-25 17:52:25 +0200
+  [1m[35m (7.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 1.4ms | Allocations: 210)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 160ms (Views: 145.9ms | ActiveRecord: 0.0ms | Allocations: 16492)
+
+
+Started GET "/pages/french" for ::1 at 2021-10-25 17:52:33 +0200
+Processing by PagesController#french as HTML
+  Rendering pages/french.html.erb within layouts/application
+  Rendered pages/_navbar.html.erb (Duration: 0.5ms | Allocations: 87)
+  Rendered pages/french.html.erb within layouts/application (Duration: 3.0ms | Allocations: 428)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 16.1ms | ActiveRecord: 0.0ms | Allocations: 5254)
+
+
+Started GET "/pages/yoda" for ::1 at 2021-10-25 17:52:38 +0200
+Processing by PagesController#yoda as HTML
+  Rendering pages/yoda.html.erb within layouts/application
+  Rendered pages/_navbar.html.erb (Duration: 0.1ms | Allocations: 6)
+  Rendered pages/yoda.html.erb within layouts/application (Duration: 1.0ms | Allocations: 201)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 13.8ms | ActiveRecord: 0.0ms | Allocations: 5033)
+
+
+Started GET "/pages/yoda" for ::1 at 2021-10-25 17:54:04 +0200
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PagesController#yoda as HTML
+  Rendering pages/yoda.html.erb within layouts/application
+  Rendered pages/_navbar.html.erb (Duration: 0.0ms | Allocations: 6)
+  Rendered pages/yoda.html.erb within layouts/application (Duration: 0.2ms | Allocations: 69)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 16.3ms | ActiveRecord: 0.0ms | Allocations: 4879)
+
+
+Started GET "/pages/french" for ::1 at 2021-10-25 17:54:08 +0200
+Processing by PagesController#french as HTML
+  Rendering pages/french.html.erb within layouts/application
+  Rendered pages/_navbar.html.erb (Duration: 0.0ms | Allocations: 6)
+  Rendered pages/french.html.erb within layouts/application (Duration: 0.3ms | Allocations: 68)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 14.1ms | ActiveRecord: 0.0ms | Allocations: 4753)
+
+
+Started GET "/pages/french" for ::1 at 2021-10-25 17:54:33 +0200
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PagesController#french as HTML
+  Rendering pages/french.html.erb within layouts/application
+  Rendered pages/_navbar.html.erb (Duration: 0.0ms | Allocations: 6)
+  Rendered pages/french.html.erb within layouts/application (Duration: 0.3ms | Allocations: 69)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 17.2ms | ActiveRecord: 0.0ms | Allocations: 4912)
+
+
+Started GET "/pages/russian" for ::1 at 2021-10-25 17:56:14 +0200
+Processing by PagesController#russian as HTML
+  Rendering pages/russian.html.erb within layouts/application
+  Rendered pages/_navbar.html.erb (Duration: 0.0ms | Allocations: 6)
+  Rendered pages/russian.html.erb within layouts/application (Duration: 0.9ms | Allocations: 199)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 35ms (Views: 33.1ms | ActiveRecord: 0.0ms | Allocations: 5013)
+
+
+Started GET "/" for ::1 at 2021-10-25 17:56:36 +0200
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 16.0ms | ActiveRecord: 0.0ms | Allocations: 4645)
+
+
+Started GET "/pages/french" for ::1 at 2021-10-25 17:56:57 +0200
+Processing by PagesController#french as HTML
+  Rendering pages/french.html.erb within layouts/application
+  Rendered pages/_navbar.html.erb (Duration: 0.0ms | Allocations: 6)
+  Rendered pages/french.html.erb within layouts/application (Duration: 0.3ms | Allocations: 68)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 43ms (Views: 32.2ms | ActiveRecord: 0.0ms | Allocations: 7344)
+
+
+Started GET "/" for ::1 at 2021-10-25 17:57:08 +0200
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 28ms (Views: 26.8ms | ActiveRecord: 0.0ms | Allocations: 4642)
+
+
+Started GET "/" for ::1 at 2021-10-25 17:57:30 +0200
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.4ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 101ms (Views: 70.0ms | ActiveRecord: 0.0ms | Allocations: 9490)
+
+
+Started GET "/" for ::1 at 2021-10-25 17:57:51 +0200
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 53ms (Views: 50.8ms | ActiveRecord: 0.0ms | Allocations: 10647)
+
+
+Started GET "/" for ::1 at 2021-10-25 17:57:54 +0200
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 15.9ms | ActiveRecord: 0.0ms | Allocations: 4640)
+
+
+Started GET "/pages/russian" for ::1 at 2021-10-25 17:57:56 +0200
+Processing by PagesController#russian as HTML
+  Rendering pages/russian.html.erb within layouts/application
+  Rendered pages/_navbar.html.erb (Duration: 0.1ms | Allocations: 6)
+  Rendered pages/russian.html.erb within layouts/application (Duration: 1.6ms | Allocations: 69)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 21ms (Views: 19.5ms | ActiveRecord: 0.0ms | Allocations: 4743)
+
+
+Started GET "/pages/french" for ::1 at 2021-10-25 17:57:57 +0200
+Processing by PagesController#french as HTML
+  Rendering pages/french.html.erb within layouts/application
+  Rendered pages/_navbar.html.erb (Duration: 0.1ms | Allocations: 6)
+  Rendered pages/french.html.erb within layouts/application (Duration: 0.7ms | Allocations: 68)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 20.6ms | ActiveRecord: 0.0ms | Allocations: 4746)
+
+
