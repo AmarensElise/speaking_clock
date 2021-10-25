@@ -2,11 +2,10 @@
 
 <%= render "navbar" %>
     <div class ="container text-center">
-      <br><br>
       <img src="/assets/yoda.png" alt="" style="width: 600px;">
       <p style="font-family: 'Source Code Pro', monospace;""><%= @time_phrase %></p>
 
       <audio controls>
-        <source src="<%= @filepath %>" type="audio/mp3">
+          <source src="<%= @filepath %>" type="audio/mp3"> 
       </audio>
 </div>

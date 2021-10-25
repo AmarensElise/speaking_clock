@@ -37,32 +37,34 @@ class PagesController < ApplicationController
       @minutes = 30
       @hour = @hour_twelve
     elsif Time.now.min.between?(33, 37)
-      @minutes = 25
+      @minutes = 35
       @hour = @hour_twelve + 1
     elsif Time.now.min.between?(38, 42)
-      @minutes = 20
+      @minutes = 40
       @hour = @hour_twelve + 1
     elsif Time.now.min.between?(43, 47)
-      @minutes = 15
+      @minutes = 45
       @hour = @hour_twelve + 1
     elsif Time.now.min.between?(48, 52)
-      @minutes = 10
+      @minutes = 50
       @hour = @hour_twelve + 1
     elsif Time.now.min.between?(53, 57)
-      @minutes = 5
+      @minutes = 55
       @hour = @hour_twelve + 1
     elsif Time.now.min.between?(58, 59)
-      @minutes = 5
+      @minutes = 0
       @hour = @hour_twelve + 1
     end
 
-    if Time.now.min > 30
-      @time_phrase =  Time.now.min.to_s + " past " + Time.now.hour.to_s + " it is."
+    if Time.now.min == 0
+      @time_phrase = "It's " + @hour.to_s + " o'clock."
+    elsif Time.now.min > 30
+      @time_phrase = "It's " + @minutes.to_s + " to " + @hour.to_s + " o'clock."
     else
-      @time_phrase =  Time.now.min.to_s + " past " + Time.now.hour.to_s + " it is."
+      @time_phrase = "It's " + @minutes.to_s + " past " + @hour.to_s + " o'clock."
     end
 
-    @filepath = "/assets/yoda/" + @hour_twelve.to_s + "_" +  Time.now.min.to_s + ".mp3"
+    @filepath = "/assets/yoda/" + @hour_twelve.to_s + "_" +  @minutes.to_s + ".mp3"
   end
 
   def russian
@@ -96,27 +98,35 @@ class PagesController < ApplicationController
       @minutes = 30
       @hour = @hour_twelve
     elsif Time.now.min.between?(33, 37)
-      @minutes = 25
+      @minutes = 35
       @hour = @hour_twelve + 1
     elsif Time.now.min.between?(38, 42)
-      @minutes = 20
+      @minutes = 40
       @hour = @hour_twelve + 1
     elsif Time.now.min.between?(43, 47)
-      @minutes = 15
+      @minutes = 45
       @hour = @hour_twelve + 1
     elsif Time.now.min.between?(48, 52)
-      @minutes = 10
+      @minutes = 50
       @hour = @hour_twelve + 1
     elsif Time.now.min.between?(53, 57)
-      @minutes = 5
+      @minutes = 55
       @hour = @hour_twelve + 1
     elsif Time.now.min.between?(58, 59)
-      @minutes = 5
+      @minutes = 55
       @hour = @hour_twelve + 1
     end
 
-    @time_phrase = "It's " + Time.now.hour.to_s + ":" +  Time.now.min.to_s
-    @filepath = "/assets/russian/" + @hour_twelve.to_s + "_" +  Time.now.min.to_s + ".mp3"
+    if Time.now.min == 0
+      @time_phrase = "It's " + @hour.to_s + " o'clock."
+    elsif Time.now.min > 30
+      @time_phrase = "It's " + @minutes.to_s + " to " + @hour.to_s + " o'clock."
+    else
+      @time_phrase = "It's " + @minutes.to_s + " past " + @hour.to_s + " o'clock."
+    end
+
+    @time_phrase = "It's " + Time.now.hour.to_s+ ":" + @minutes.to_s
+    @filepath = "/assets/russian/" + @hour_twelve.to_s + "_" +  @minutes.to_s + ".mp3"
   end
 
   def french
@@ -150,26 +160,34 @@ class PagesController < ApplicationController
       @minutes = 30
       @hour = @hour_twelve
     elsif Time.now.min.between?(33, 37)
-      @minutes = 25
+      @minutes = 35
       @hour = @hour_twelve + 1
     elsif Time.now.min.between?(38, 42)
-      @minutes = 20
+      @minutes = 40
       @hour = @hour_twelve + 1
     elsif Time.now.min.between?(43, 47)
-      @minutes = 15
+      @minutes = 45
       @hour = @hour_twelve + 1
     elsif Time.now.min.between?(48, 52)
-      @minutes = 10
+      @minutes = 50
       @hour = @hour_twelve + 1
     elsif Time.now.min.between?(53, 57)
-      @minutes = 5
+      @minutes = 55
       @hour = @hour_twelve + 1
     elsif Time.now.min.between?(58, 59)
-      @minutes = 5
+      @minutes = 55
       @hour = @hour_twelve + 1
     end
 
-    @time_phrase = "It's " + Time.now.hour.to_s+ ":" + Time.now.min.to_s
-    @filepath = "/assets/french/" + @hour_twelve.to_s + "_" +  Time.now.min.to_s + ".mp3"
+    if Time.now.min == 0
+      @time_phrase = "It's " + @hour.to_s + " o'clock."
+    elsif Time.now.min > 30
+      @time_phrase = "It's " + @minutes.to_s + " to " + @hour.to_s + " o'clock."
+    else
+      @time_phrase = "It's " + @minutes.to_s + " past " + @hour.to_s + " o'clock."
+    end
+
+    @time_phrase = "It's " + Time.now.hour.to_s+ ":" + @minutes.to_s
+    @filepath = "/assets/french/" + @hour_twelve.to_s + "_" +  @minutes.to_s + ".mp3"
   end
 end
