@@ -1,0 +1,316 @@
+
+
+
+<body>
+
+<div style="padding: 5px;">
+  <div class="card border-light shadow-sm p-3 mb-5 bg-white rounded" style="
+    max-width: 700px;
+    position: center;
+    margin: 0 auto;
+    float: none;">
+
+     <div class="card-body" style="border-radius: 30px;">
+
+<!--  Social  -->
+
+<div align="right">
+   <% if submission.proof_link.present? %>
+     <%= link_to "#{submission.proof_link}", target: :_blank  do %>
+     <span class="fa-stack" style="vertical-align: right; color: #d4edda;"
+      data-toggle="tooltip" title="Link to proof">
+         <i class="fas fa-circle fa-stack-2x"></i>
+         <i class="fas fa-paperclip fa-stack-1x fa-inverse" style="color: #155724;"></i>
+      </span>
+     <% end %>
+   <% end %>
+
+
+   <% if submission.etymology.present? %>
+   <%= link_to "#{submission.etymology_source}", target: :_blank  do %>
+      <span class="fa-stack" style="vertical-align: right; color: #d4edda;"
+      data-toggle="tooltip" title="<%= submission.etymology %>">
+             <i class="fas fa-circle fa-stack-2x"></i>
+             <p class="fa-stack-1x fa-inverse" style="color: #155724; font-weight: 500; font-size: 11pt;">ety</p>
+      </span>
+    <% end %>
+  <% end %>
+
+
+  <% if submission.synonym.present? %>
+      <span class="fa-stack" style="vertical-align: right; color: #d4edda;"
+      data-toggle="tooltip" title="Synonyms include: <%= submission.synonym %>">
+             <i class="fas fa-circle fa-stack-2x"></i>
+             <p class="fa-stack-1x fa-inverse" style="color: #155724; font-weight: 500; font-size: 11pt;">syn</p>
+      </span>
+  <% end %>
+
+   <% if submission.alternatives.present? %>
+      <span class="fa-stack" style="vertical-align: right; color: #d4edda;"
+      data-toggle="tooltip" title="Alternatively: <%= submission.alternatives %>">
+             <i class="fas fa-circle fa-stack-2x"></i>
+             <p class="fa-stack-1x fa-inverse" style="color: #155724; font-weight: 500; font-size: 11pt;">alt</p>
+      </span>
+  <% end %>
+
+  <% if submission.pronunciation.present? %>
+      <span class="fa-stack" style="vertical-align: right; color: #d4edda;"
+      data-toggle="tooltip" title="<%= submission.pronunciation %>">
+             <i class="fas fa-circle fa-stack-2x"></i>
+             <p class="fa-stack-1x fa-inverse" style="color: #155724; font-weight: 500; font-size: 12pt;">æ</p>
+      </span>
+  <% end %>
+
+  <% if submission.formal == true %>
+    <span class="fa-stack" style="vertical-align: right; color: #bee5eb;"
+          data-toggle="tooltip" title="This submission is used in formal speech">
+            <i class="fas fa-circle fa-stack-2x"></i>
+            <i class="fas fa-exclamation fa-stack-1x fa-inverse" style="color: #0c5460;"></i>
+    </span>
+  <% end %>
+
+  <% if submission.informal == true %>
+    <span class="fa-stack" style="vertical-align: right; color: #bee5eb;"
+          data-toggle="tooltip" title="This submission is used in informal speech">
+            <i class="fas fa-circle fa-stack-2x"></i>
+            <i class="fas fa-exclamation fa-stack-1x fa-inverse" style="color: #0c5460;"></i>
+    </span>
+  <% end %>
+
+
+   <% if submission.explicit == true %>
+    <span class="fa-stack" style="vertical-align: right; color: #ffeeba;"
+          data-toggle="tooltip" title="This submission is explicit">
+            <i class="fas fa-circle fa-stack-2x"></i>
+            <i class="fas fa-exclamation fa-stack-1x fa-inverse" style="color: #856404;"></i>
+    </span>
+  <% end %>
+
+
+  <% if submission.insulting == true %>
+    <span class="fa-stack" style="vertical-align: right; color: #f8d7da;"
+          data-toggle="tooltip" title="This submission is insulting">
+            <i class="fas fa-circle fa-stack-2x"></i>
+            <i class="fas fa-exclamation fa-stack-1x fa-inverse" style="color: #721c24;"></i>
+    </span>
+  <% end %>
+
+   <% if submission.offensive == true %>
+    <span class="fa-stack" style="vertical-align: right; color: #f8d7da;"
+          data-toggle="tooltip" title="This submission may cause offense">
+            <i class="fas fa-circle fa-stack-2x"></i>
+            <i class="fas fa-exclamation fa-stack-1x fa-inverse" style="color: #721c24;"></i>
+    </span>
+  <% end %>
+
+</div>
+<br>
+<% if submission.user.pro? %>
+    <a href="http://untranslatable.co/@<%= submission.user.username %>" type="button" class="btn pro-banner" style="-webkit-appearance: none; border-radius: 0px 20px 20px 0px;">brought to you by <b><%= submission.user.project_name %></b></a>
+  <br><br><br>
+<% end %>
+
+ <% if submission.literal_translation.present? %>
+    <p class="untranslatable-submission-title-big">
+        <%= link_to submission.title,
+        user_submission_path(submission.user, submission) %><span>*</span>  </p>
+
+      <p class="untranslatable-literal-translation-small">
+      <span>*</span> <%= submission.literal_translation %>
+      </p>
+<% else %>
+      <p class="untranslatable-submission-title-big">
+          <%= link_to submission.title,
+          user_submission_path(submission.user, submission) %></p>
+<% end %>
+
+
+
+
+<!-- Location -->
+
+<p class="untranslatable-language-location">
+
+    <!-- Language -->
+ <%= link_to submission.language, "/pages/explore?_method=submission&authenticity_token=V0pDSffY4nsZhdCtGFtZWzHfkjeoTl6RHp7y4lpBqlYH6dko9%2BXm53LlCpT%2BKbRpEbiPCPIG%2BIVomp3erLHtaw%3D%3D&q%5Blanguage_cont%5D=#{submission.language}&commit=apply" %>
+
+   <!--   Specific dialect -->
+
+ <% if submission.specific_dialect.present? %> |  <%= link_to submission.specific_dialect,
+            "/pages/explore?_method=submission&authenticity_token=V0pDSffY4nsZhdCtGFtZWzHfkjeoTl6RHp7y4lpBqlYH6dko9%2BXm53LlCpT%2BKbRpEbiPCPIG%2BIVomp3erLHtaw%3D%3D&q%5Bspecific_dialect_cont%5D=#{submission.specific_dialect}&commit=apply" %>
+ <% end %>
+
+     <!-- Flag -->
+
+ <% if ["Basque", "West Frisian", "Catalan", "Kurdish", "Meänkieli", "Sami", "Romani", "Uighur", "Sicilian"].include? submission.language %>
+
+    <%= link_to image_tag("languageFlags/#{submission.language}.png", :size => "16x16"),
+       "/pages/flags#additionalflags" rescue image_tag("countryFlags/not-available.png", :size => "16x16") %>
+
+ <% else %>
+
+  <%= image_tag("countryFlags/#{submission.country}.png", :size => "16x16") rescue image_tag("countryFlags/not-available.png", :size => "16x16")%>
+
+<% end %>
+
+
+      <!-- Specific region -->
+ <% if submission.specific_region.present? %>
+
+      <%= link_to submission.specific_region, "/pages/explore?_method=submission&authenticity_token=V0pDSffY4nsZhdCtGFtZWzHfkjeoTl6RHp7y4lpBqlYH6dko9%2BXm53LlCpT%2BKbRpEbiPCPIG%2BIVomp3erLHtaw%3D%3D&q%5Bspecific_region_cont%5D=#{submission.specific_region}&commit=apply" %>,
+      <% end %>
+
+      <!-- Country -->
+
+
+      <%= link_to submission.country, "/pages/explore?_method=submission&authenticity_token=V0pDSffY4nsZhdCtGFtZWzHfkjeoTl6RHp7y4lpBqlYH6dko9%2BXm53LlCpT%2BKbRpEbiPCPIG%2BIVomp3erLHtaw%3D%3D&q%5Bcountry_cont%5D=#{submission.country}&commit=apply" %>
+
+</p>
+
+
+<!-- Additional information about the use of submission -->
+
+    <p class="untranslatable-category-use">
+      <%= link_to "#{submission.entry_category}",  "/pages/explore?_method=submission&authenticity_token=V0pDSffY4nsZhdCtGFtZWzHfkjeoTl6RHp7y4lpBqlYH6dko9%2BXm53LlCpT%2BKbRpEbiPCPIG%2BIVomp3erLHtaw%3D%3D&q%5Bcategory_input_name_cont%5D=#{submission.entry_category}&commit=apply" %>
+
+    USED
+       <%= link_to "#{submission.frequency_use}",  "/pages/explore?_method=submission&authenticity_token=V0pDSffY4nsZhdCtGFtZWzHfkjeoTl6RHp7y4lpBqlYH6dko9%2BXm53LlCpT%2BKbRpEbiPCPIG%2BIVomp3erLHtaw%3D%3D&q%5Bfrequency_use_cont%5D=#{submission.frequency_use}&commit=apply" %>
+
+    BY
+
+         <%= link_to "#{submission.used_by}", "/pages/explore?_method=submission&authenticity_token=V0pDSffY4nsZhdCtGFtZWzHfkjeoTl6RHp7y4lpBqlYH6dko9%2BXm53LlCpT%2BKbRpEbiPCPIG%2BIVomp3erLHtaw%3D%3D&q%5Bused_by_cont%5D=#{submission.used_by}&commit=apply" %>
+        </p>
+
+<!-- Explanation of submission -->
+
+  <% if submission.word_class.present? %>
+      <p class="untranslatable-explanation"> (<%= submission.word_class.split("-")[0] %>) <%= submission.explanation %> </p>
+  <% else %>
+     <p class="untranslatable-explanation"> <%= submission.explanation %> </p>
+  <% end %>
+
+
+  <% if submission.note.present? %>
+      <p class="untranslatable-note">Note: <%= submission.note %>  </p>
+  <% end %>
+
+
+<!-- Display of example used in context -->
+
+<p class="untranslatable-example"> <%= submission.example_original %></p>
+<p class="untranslatable-example"> <%= submission.example_translation %></p>
+
+
+<!-- Submitted by Username + Link to user profile -->
+
+<% if submission.user.pro? %>
+<p class="untranslatable-submitted-by"> Submitted <%= submission.created_at.strftime("%B %Y") %>
+     by
+       <%= link_to submission.user.username, user_slug_path(submission.user), :type => 'button', :class => "btn btn-sm pro-banner", :style => " -webkit-appearance: none; border-radius: 20px; padding: 0px 5px 0px 5px; letter-spacing: 0.05em !important;" %> </p>
+<% else %>
+    <br>
+    <p class="untranslatable-submitted-by">
+      Submitted <%= submission.created_at.strftime("%B %Y") %>
+     by <%= link_to submission.user.username, user_slug_path(submission.user) %> </p>
+<% end %>
+
+<!-- Confirmation -->
+<% if submission.get_upvotes.size>1 %>
+<p class="confirmed-by"> <i class="far fa-check-circle" style="color: #ABE188;"></i></span>
+ <%= link_to "Confirmed by #{submission.get_upvotes.size} people", '/pages/confirmationinfo' %>
+</p>
+<% end %>
+
+
+<!-- List of icons -->
+ <br>
+  <div align="right">
+
+
+
+           <%= link_to "https://trends.google.com/trends/explore?q=#{submission.title}" do %>
+            <span class="fa-stack" style="vertical-align: top; color: #dcdddf;"
+            data-toggle="tooltip" title="Google trends">
+            <i class="fas fa-circle fa-stack-2x"></i>
+            <i class="fas fa-chart-line fa-stack-1x fa-inverse"></i>
+          </span>
+          <% end %>
+
+
+           <a href="javascript:showhide('embed')">
+              <span class="fa-stack" style="color: #dcdddf;"
+                    data-toggle="tooltip" title="Share">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fas fa-code fa-stack-1x fa-inverse"></i>
+              </span>
+           </a>
+
+           <a href="javascript:showhide('copy')">
+              <span class="fa-stack" style="color: #dcdddf;"
+                    data-toggle="tooltip" title="Share">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fas fa-copy fa-stack-1x fa-inverse"></i>
+              </span>
+           </a>
+
+
+         <!-- <%= link_to "/pages/newfeatures" do %>
+            <span class="fa-stack" style="vertical-align: top; color: #dcdddf;"
+            data-toggle="tooltip" title="Embed this submission">
+            <i class="fas fa-circle fa-stack-2x"></i>
+            <i class="fas fa-code fa-stack-1x fa-inverse"></i>
+          </span>
+          <% end %> -->
+
+          <%= link_to report_submission_path(submission) do %>
+          <span class="fa-stack" style="vertical-align: right; color: #dcdddf;"
+          data-toggle="tooltip" title="Report this submission">
+            <i class="fas fa-circle fa-stack-2x"></i>
+            <i class="fas fa-flag fa-stack-1x fa-inverse"></i>
+          </span>
+          <% end %>
+
+
+          <div id="embed" style="display: none; margin-top: 10px;">
+                <%=
+                  "
+                  <script type=\"text/javascript\" src=\"#{api_embedded_submission_url(submission.id)}\"></script>
+                  <div id=\"submission_#{submission.id}\"></div>
+                  "
+                %>
+          </div>
+
+          <div id="copy" style="display: none; margin-top: 10px;">
+                <%= "<h2>#{submission.title}</h2>" %> <br>
+                <% if submission.literal_translation.present? %>
+                  <%= "<h3>Literal translation: #{submission.title}</h3>" %><br>
+                <% end %>
+                <%="<p>#{submission.explanation}</p>" %>
+          </div>
+
+     </div>
+    </div>
+  </div>
+</div>
+
+<div align="center" style="padding-bottom: 30px;">
+  <%= social_share_button_tag(" '#{submission.title.capitalize}' explained on Untranslatable") %>
+</div>
+
+
+
+
+  <script>
+    $(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+  })
+
+
+       function showhide(id) {
+        var e = document.getElementById(id);
+        e.style.display = (e.style.display == 'block') ? 'none' : 'block';
+     }
+
+
+  </script>
+</body>

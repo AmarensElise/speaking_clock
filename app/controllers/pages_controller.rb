@@ -2,14 +2,14 @@ class PagesController < ApplicationController
 
 
   def home
-    @time_phrase = "It's " + @minutes.to_s + " minutes past " + @hour.to_s + " o'clock"
+    @time_phrase =  @minutes.to_s + " past " + @hour.to_s + " it is."
     @filepath = "/assets/nl_recordings/nl_recordings/" + @hour.to_s + "_" + @minutes.to_s + ".mp3"
   end
 
-  def french
-    @current_hour =  Time.now.hour + 2
+  def yoda
+    @current_hour =  Time.now.hour
 
-    if Time.now.hour > 12
+    if @current_hour > 12
       @hour_twelve = @current_hour - 12
     else
       @hour_twelve = @current_hour
@@ -57,11 +57,11 @@ class PagesController < ApplicationController
     end
 
     if Time.now.min > 30
-      @time_phrase = "It's " + @minutes.to_s + " to " + @hour.to_s + "."
+      @time_phrase = @minutes.to_s + " past " + @hour.to_s + " it is."
     else
-      @time_phrase = "It's " + @minutes.to_s + " past " + @hour.to_s + "."
+      @time_phrase = @minutes.to_s + " past " + @hour.to_s + " it is."
     end
 
-    @filepath = "/assets/french/" + @hour_twelve.to_s + "_" + @minutes.to_s + ".mp3"
+    @filepath = "/assets/yoda/" + @hour_twelve.to_s + "_" + @minutes.to_s + ".mp3"
   end
 end
