@@ -57,11 +57,11 @@ class PagesController < ApplicationController
     end
 
     if Time.now.min == 0
-      @time_phrase = "It's " + @hour.to_s + " o'clock."
+      @time_phrase =  @hour.to_s + " o'clock it is."
     elsif Time.now.min > 30
-      @time_phrase = "It's " + @minutes.to_s + " to " + @hour.to_s + " o'clock."
+      @time_phrase =  (60 - @minutes).to_s + " to " + @hour.to_s + " it is."
     else
-      @time_phrase = "It's " + @minutes.to_s + " past " + @hour.to_s + " o'clock."
+      @time_phrase = @minutes.to_s + " past " + @hour.to_s + " it is."
     end
 
     @filepath = "/assets/yoda/" + @hour_twelve.to_s + "_" +  @minutes.to_s + ".mp3"
@@ -120,12 +120,12 @@ class PagesController < ApplicationController
     if Time.now.min == 0
       @time_phrase = "It's " + @hour.to_s + " o'clock."
     elsif Time.now.min > 30
-      @time_phrase = "It's " + @minutes.to_s + " to " + @hour.to_s + " o'clock."
+      @time_phrase = "It's " + (60 - @minutes).to_s + " to " + @hour.to_s + " o'clock."
     else
       @time_phrase = "It's " + @minutes.to_s + " past " + @hour.to_s + " o'clock."
     end
 
-    @time_phrase = "It's " + Time.now.hour.to_s+ ":" + @minutes.to_s
+
     @filepath = "/assets/russian/" + @hour_twelve.to_s + "_" +  @minutes.to_s + ".mp3"
   end
 
@@ -182,12 +182,11 @@ class PagesController < ApplicationController
     if Time.now.min == 0
       @time_phrase = "It's " + @hour.to_s + " o'clock."
     elsif Time.now.min > 30
-      @time_phrase = "It's " + @minutes.to_s + " to " + @hour.to_s + " o'clock."
+      @time_phrase = "It's " + (60 - @minutes).to_s + " to " + @hour.to_s + " o'clock."
     else
       @time_phrase = "It's " + @minutes.to_s + " past " + @hour.to_s + " o'clock."
     end
 
-    @time_phrase = "It's " + Time.now.hour.to_s+ ":" + @minutes.to_s
     @filepath = "/assets/french/" + @hour_twelve.to_s + "_" +  @minutes.to_s + ".mp3"
   end
 end
