@@ -7,7 +7,7 @@ class PagesController < ApplicationController
   end
 
   def yoda
-    @current_hour =  Time.now.hour + 2
+    @current_hour =  Time.now.hour + 1
 
     if @current_hour > 12
       @hour_twelve = @current_hour - 12
@@ -68,7 +68,7 @@ class PagesController < ApplicationController
   end
 
   def russian
-    @current_hour =  Time.now.hour + 2
+    @current_hour =  Time.now.hour + 1
 
     if @current_hour > 12
       @hour_twelve = @current_hour - 12
@@ -130,7 +130,7 @@ class PagesController < ApplicationController
   end
 
   def french
-    @current_hour =  Time.now.hour + 2
+    @current_hour =  Time.now.hour + 1
 
     if @current_hour > 12
       @hour_twelve = @current_hour - 12
